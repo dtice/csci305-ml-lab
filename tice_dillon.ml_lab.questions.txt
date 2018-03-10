@@ -23,9 +23,9 @@ Lab Questions
 	Tail recursion can be beneficial because you can utilize Tail-call optimization, allowing the programmer 
 	to maintain a constant stack space, instead of changing the stack size every time you call the recursive function.
 9.
-	Couldn't get Union working :(
+	{ ham green eggs and }
 10.
-	Couldn't get Intersect working :(
+	{ macaroni and }
 11.
 	I like how short the functions are; if I was able to really sit down and take the time to understand all the nuances of ML,
 	I feel like I could make very short, efficient programs that utilize recursion.

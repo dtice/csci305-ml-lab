@@ -22,17 +22,28 @@ fun isMember e Empty = false
 
 (* Converts a list to a set using tail recursion *)
 fun list2Set [] = Empty
-  | list2Set (x::xs) = Set(x, (list2Set xs));
-
+  | list2Set (x::xs) = let val z = list2Set xs 
+						in if isMember x z 
+							then
+								z 
+							else 
+								Set(x, z)
+						end;
 (* Union operation for Set type. Returns a new set with all elements that are not in both sets to be united *)
-fun union Empty Empty = Empty
-  | union (Set (x)) (Set = (Set x);
-  
-val fuck = Set(#"F", Set(#"U", Set(#"C", Set(#"K", Empty))));
-union Empty fuck;
+fun union set1 Empty = set1
+  | union Empty set1 = set1
+  | union set1 (Set(x, tail)) = if isMember x set1 
+								then
+									union set1 tail
+								else
+									Set(x, union set1 tail);
+
+
 
 (* Intersect operation for Set type *)
-fun intersect set1 set2 = ;
+fun intersect set1 Empty = Empty
+	| intersect Empty set1 = Empty
+	| intersect set1 (Set(head, tail)) = if isMember head set1 then Set(head, intersect set1 tail) else intersect set1 tail;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
