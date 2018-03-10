@@ -8,12 +8,36 @@
 ***************************************************************)
 (* Warmup function *)
 fun f [] = [] (* a *)
-   | f (x::xs) = (x + 1) :: (f xs); (* b *)
+  | f (x::xs) = (x + 1) :: (f xs); (* b *)
+  
+(* Datatype *)
+datatype 'element set =
+   Empty
+  | Set of 'element * 'element set;
+
+(* Tells whether the given element e is a part of the given set by using tail recursion *)
+fun isMember e Empty = false
+  | isMember e (Set(x, tail)) = 
+      if x = e then true else isMember e tail;
+
+(* Converts a list to a set using tail recursion *)
+fun list2Set [] = Empty
+  | list2Set (x::xs) = Set(x, (list2Set xs));
+
+(* Union operation for Set type. Returns a new set with all elements that are not in both sets to be united *)
+fun union Empty Empty = Empty
+  | union (Set (x)) (Set = (Set x);
+  
+val fuck = Set(#"F", Set(#"U", Set(#"C", Set(#"K", Empty))));
+union Empty fuck;
+
+(* Intersect operation for Set type *)
+fun intersect set1 set2 = ;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
   | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
-
+  
 (* Simple function to stringify the contents of a Set of ints *)
 fun stringifyIntSet Empty = ""
   | stringifyIntSet (Set(w, ws)) = Int.toString(w) ^ " " ^ stringifyIntSet(ws);
@@ -36,9 +60,9 @@ list2Set [#"a", #"b", #"c"];
 list2Set [];
 list2Set [6, 2, 2];
 list2Set ["x", "y", "z", "x"];
-*)
+
 (* Question 1 *)
-f [3, 1, 4, 1, 5, 9]
+f [3, 1, 4, 1, 5, 9];
 
 (* Question 5 *)
 val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);

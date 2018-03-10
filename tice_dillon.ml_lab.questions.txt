@@ -1,0 +1,42 @@
+Dillon Tice
+CSCI 305
+Spring 2018
+Lab Questions
+=======================
+1.
+	[4,2,5,2,6,10]
+2.
+	Function f adds 1 to every member of the input set.
+3.
+	The line fun f [] = [] tells the interpreter that if we pass an empty set to the function, it will return an empty set
+4.
+	The line | f(x::xs) = (x+1) :: (f xs) is a second way of evaluating the function with different inputs. 
+	It basically splits the input list into a head and tail. Then, it adds 1 to the head, 
+	then cons it to the recursive call of (f xs), where it increments the head of the tail and so on. 
+5.
+	False
+6.
+	This is tail recursion because the evaulation of the if statement happens before the recursive call.
+7.
+	val quest7 = Set ("it",Set ("was",Set #)) : string set
+8.
+	Tail recursion can be beneficial because you can utilize Tail-call optimization, allowing the programmer 
+	to maintain a constant stack space, instead of changing the stack size every time you call the recursive function.
+9.
+	Couldn't get Union working :(
+10.
+	Couldn't get Intersect working :(
+11.
+	I like how short the functions are; if I was able to really sit down and take the time to understand all the nuances of ML,
+	I feel like I could make very short, efficient programs that utilize recursion.
+12.
+	The only thing I dislike about ML is the code readability; if I want to learn how a piece of ML code works, I basically need
+	someone to explain it to me. It's very hard to make inferences about what a program is doing since almost everything is recursive.
+13.
+	I did enjoy this lab. I liked how closely it followed a lot of the things we learned about functional programming. Also, I liked how the 
+	warmup really helped me as I went through the lab. I'd like more examples that don't tell you exactly how to do the thing, but instead do a completely different, 
+	but related thing.
+14.
+	I spent approximately 12 hours on this lab, and I'd argue that almost all of it was researching and referencing my notes/slides.
+15.
+	I think I will use ML again. Functional programming seems like a very powerful paradigm to utilize. I'd probably use it for game AI, since it needs to be fast.
